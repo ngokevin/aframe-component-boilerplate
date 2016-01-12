@@ -1,68 +1,31 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var AFRAME = require('aframe-core');
-window.AFRAME = AFRAME;
-var component = require('../index').component;
-AFRAME.registerComponent('mobile-video-play', component);
+var exampleComponent = require('../index.js').component;
+AFRAME.registerComponent('example', exampleComponent);
 
-},{"../index":2,"aframe-core":54}],2:[function(require,module,exports){
+},{"../index.js":2,"aframe-core":54}],2:[function(require,module,exports){
 /**
- * Mobile video play component for A-Frame.
- *
- * @param clickTarget - Selector to an element that when clicked will trigger video play.
- * @param videoTarget - Selector to a video element to trigger play on.
+ * Example component for A-Frame.
  */
 module.exports.component = {
-  // TODO: Upgrade to improved aframe-core schema API.
-  schema: {
-    clickTarget: {
-      // type: 'selector',
-      default: ''
-    },
-    videoTarget: {
-      // type: 'selector',
-      default: ''
-    }
-  },
+  schema: { },
 
-  init: function () {
-    this.clickEvent = null;
-  },
+  /**
+   * Called once when component is attached. Generally for initial setup.
+   */
+  init: function () { },
 
-  update: function (oldData) {
-    var data = this.data;
-    if (!data.clickTarget || !data.videoTarget) { return; }
+  /**
+   * Called when component is attached and when component data changes.
+   * Generally modifies the entity based on the data.
+   */
+  update: function (oldData) { },
 
-    var clickTargetEl = document.querySelector(data.clickTarget);
-    var videoTargetEl = document.querySelector(data.videoTarget);
-
-    if (clickTargetEl.tagName === 'A-ENTITY') {
-      console.error('[aframe-mobile-video-component] clickTarget must be a normal DOM element.');
-      return;
-    }
-    if (videoTargetEl.tagName !== 'VIDEO') {
-      console.error('[aframe-mobile-video-component] videoTarget must be a <video> element.');
-      return;
-    }
-
-    videoTargetEl.setAttribute('webkit-playsinline', 'true');
-
-    if (this.clickHandler) {
-      // If updating, removing old handler.
-      this.clickTargetEl.removeEventListener('click', this.clickHandler);
-    }
-    this.clickHandler = function (event) {
-      videoTargetEl.play();
-    };
-    clickTargetEl.addEventListener('click', this.clickHandler);
-    // Store current clickTargetEl in case it changes later.
-    this.clickTargetEl = clickTargetEl;
-  },
-
-  remove: function () {
-    if (this.clickHandler) {
-      this.clickTargetEl.removeEventListener('click', this.clickHandler);
-    }
-  }
+  /**
+   * Called when a component is removed (e.g., via removeAttribute).
+   * Generally undoes all modifications to the entity.
+   */
+  remove: function () { }
 };
 
 },{}],3:[function(require,module,exports){
