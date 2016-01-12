@@ -1,11 +1,20 @@
 <html>
   <head>
     <script src="../build.js"></script>
+    <script src="https://raw.githubusercontent.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
   </head>
   <body>
-    <a-assets></a-assets>
+    <a-assets>
+      <video id="video" autoplay="true" src="banana.mp4" loop="true"></video>
+    </a-assets>
     <a-scene>
-      <a-entity geometry="primitive: box" material="color: #C03546"></a-entity>
+      <a-entity geometry="primitive: plane; height: 10; width: 10" position="0 0 -5"
+                material="shader: flat; src: #video"
+                mobile-video-play="clickTarget: canvas; videoTarget: #video"
+                rotation="0 0 180"></a-entity>
+
+      <a-entity text="text: Tap to play on mobile" position="-4 6 -5"
+                material="color: #352F44; shader: flat"></a-entity>
     </a-scene>
   </body>
 </html>
