@@ -1,3 +1,3 @@
-var AFRAME = require('aframe-core');
-var exampleComponent = require('../index.js').component;
-AFRAME.registerComponent('example', exampleComponent);
+require('aframe');
+var ExampleComponent = require('../index.js').Component;
+AFRAME.registerComponent('example', ExampleComponent);

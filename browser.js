@@ -7,14 +7,10 @@
 
   // Register all components here.
   var components = {
-    example: require('./index').component
+    example: require('./index').Component
   };
 
   Object.keys(components).forEach(function (name) {
-    if (AFRAME.aframeCore) {
-      AFRAME.aframeCore.registerComponent(name, components[name]);
-    } else {
-      AFRAME.registerComponent(name, components[name]);
-    }
+    AFRAME.registerComponent(name, components[name]);
   });
 })();
