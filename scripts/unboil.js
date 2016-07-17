@@ -49,7 +49,7 @@ var q4 = {
   type: 'input'
 };
 
-inquirer.prompt([q1, q2, q3, q4], run);
+inquirer.prompt([q1, q2, q3, q4]).then(run);
 
 function run (ans) {
   ls(['index.js', 'package.json', 'README.md']).forEach(function (file) {
