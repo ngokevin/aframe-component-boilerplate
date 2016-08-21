@@ -9,8 +9,6 @@
     "dist": "webpack index.js dist/aframe-example-component.js && webpack -p index.js dist/aframe-example-component.min.js",
     "lint": "semistandard -v | snazzy",
     "postpublish": "npm run dist",
-    "preghpages": "npm run build && shx rm -rf gh-pages && shx mkdir gh-pages && shx cp -r examples/* gh-pages",
-    "ghpages": "npm run preghpages && ghpages -p gh-pages",
     "start": "npm run dev",
     "unboil": "node scripts/unboil.js"
   },
@@ -37,7 +35,6 @@
     "browserify": "^13.0.0",
     "browserify-css": "^0.9.1",
     "budo": "^8.2.2",
-    "ghpages": "^0.0.8",
     "inquirer": "^1.0.2",
     "randomcolor": "^0.4.4",
     "semistandard": "^8.0.0",
