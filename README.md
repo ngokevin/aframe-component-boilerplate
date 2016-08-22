@@ -6,9 +6,9 @@ Boilerplate for sharing [A-Frame](https://aframe.io) [components](https://aframe
 
 1. `npm install && npm run unboil` to rename and trim stuff. Don't forget to **unboil**.
 2. [Write your component](http://ngokevin.com/blog/aframe-component).
-3. Build examples (`npm run dev` to watch for changes to build example bundles located in docs directory).
+3. Build examples (`npm run dev` to watch for changes to build example bundles located in `docs/` directory).
 4. `npm publish` and commit the `dist/` files.
-6. Share on [Slack](https://aframevr-slack.herokuapp.com/) and [awesome-aframe](https://github.com/aframevr/awesome-aframe)!
+5. Share on [Slack](https://aframevr-slack.herokuapp.com/) and [awesome-aframe](https://github.com/aframevr/awesome-aframe)!
 
 Examples:
 
