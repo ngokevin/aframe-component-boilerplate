@@ -2,6 +2,8 @@
 
 > This is not at all means required for writing an A-Frame component. It is intended for publishing and sharing a component for the community to re-use.
 
+> Currently planning on making this an npm script and revamping the site generation pieces.
+
 Boilerplate for sharing [A-Frame](https://aframe.io) [components](https://aframe.io/docs/core/component.html):
 
 1. `npm install && npm run unboil` to rename and trim stuff. Don't forget to **unboil**.
